@@ -7,6 +7,8 @@
 //
 
 #import "ContainerTestAppDelegate.h"
+#import "ContainerViewController.h"
+#import "TestChildViewController.h"
 
 @implementation ContainerTestAppDelegate
 
@@ -16,6 +18,22 @@
 {
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    TestChildViewController *alpha = [[TestChildViewController alloc] initWithNibName:nil bundle:nil];
+    
+    alpha.labelText = @"TEST";
+    
+    TestChildViewController *bottom = [[TestChildViewController alloc] initWithNibName:nil bundle:nil];
+    
+    bottom.labelText = @"bottom controller";
+    
+    ContainerViewController *cvc = [[ContainerViewController alloc] initWithTopBaseViewController:alpha bottomViewController:bottom];
+    
+    UINavigationController *navc = [[UINavigationController alloc]initWithRootViewController:cvc];
+    
+   
+    self.window.rootViewController = navc;
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
