@@ -12,6 +12,9 @@
 
 @implementation ContainerTestAppDelegate
 
+// Added by Chet to test another connection
+// to GitHub
+
 @synthesize window = _window;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
